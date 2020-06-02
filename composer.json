@@ -32,7 +32,7 @@
         "ext-curl": "*",
         "composer/installers": "^1.2",
         "cweagans/composer-patches": "^1.6.5",
-        "davyin/dyniva": "dev",
+        "davyin/dyniva": "*",
         "drupal/console": "^1.0.2",
         "drupal/core-composer-scaffold": "^8.8.0",
         "drupal/search_api": "^1.0",
