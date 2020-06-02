@@ -6,7 +6,7 @@
     "require": {
         "davyin/dyniva": "^1.0",
         "cweagans/composer-patches": "^1.6.0",
-        "drupal/core-composer-scaffold": "*",
+        "drupal/core-composer-scaffold": "^8.8.0",
         "oomphinc/composer-installers-extender": "^1.1"
     },
     "require-dev": {
