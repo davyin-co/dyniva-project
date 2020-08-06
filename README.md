@@ -1,9 +1,9 @@
 composer create-project davyin/dyniva-project dyniva-project-test --stability dev  --no-interaction
-# Commerce 2.x project template
+# Dyniva CMS  project template
 
 Use [Composer](https://getcomposer.org/) to get Drupal + Dyniva.
 
-Also look at [drupalcommerce/demo-project](https://github.com/drupalcommerce/demo-project)
+Also look at [dyniva](https://github.com/terryzwt/dyniva)
 for a version with demo content.
 
 ## Usage
