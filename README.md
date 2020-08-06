@@ -1,4 +1,3 @@
-composer create-project davyin/dyniva-project dyniva-project-test --stability dev  --no-interaction
 # Dyniva CMS  project template
 
 Use [Composer](https://getcomposer.org/) to get Drupal + Dyniva.
@@ -17,7 +16,7 @@ for your setup.
 After that you can create the project:
 
 ```
-composer create-project davyin/dyniva-project dyniva-project-test --stability dev  --no-interaction
+composer create-project davyin/dyniva-project dyniva-project --stability dev  --no-interaction
 ```
 
 Done! Use `composer require ...` to download additional modules and themes:
