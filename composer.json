@@ -4,17 +4,16 @@
     "description": "Project template for Drupal 8 sites built with the Dyniva distribution.",
     "license": "GPL-2.0-or-later",
     "require": {
-        "davyin/dyniva": "^1.1",
-        "cweagans/composer-patches": "^1.6.0",
-        "oomphinc/composer-installers-extender": "^1.1 | ^2.0",
-        "drupal/core-composer-scaffold": "^8.9.0",
-        "drupal/core": "^8.9.0"
+        "davyin/dyniva": "1.1.x-dev",
+        "cweagans/composer-patches": "^1.7",
+        "oomphinc/composer-installers-extender": "^1.1 | ^2.0"
     },
     "require-dev": {
         "drush/drush": ">=9.0",
         "zaporylie/composer-drupal-optimizations": "^1.1"
     },
-    "config": { "process-timeout": 0
+    "config": { 
+        "process-timeout": 0
     },
     "extra": {
         "composer-exit-on-patch-failure": true,
@@ -36,11 +35,20 @@
             "docroot/modules/contrib/{$name}": [
                 "type:drupal-module"
             ],
+            "docroot/modules/custom/{$name}": [
+                "type:drupal-custom-module"
+            ],
             "docroot/profiles/contrib/{$name}": [
                 "type:drupal-profile"
             ],
+            "docroot/profiles/custom/{$name}": [
+                "type:drupal-custom-profile"
+            ],
             "docroot/themes/contrib/{$name}": [
                 "type:drupal-theme"
+            ],
+            "docroot/themes/custom/{$name}": [
+                "type:drupal-custom-theme"
             ],
             "drush/contrib/{$name}": [
                 "type:drupal-drush"
