@@ -1,28 +1,23 @@
-# Dyniva CMS  project template
+# 介绍
 
-Use [Composer](https://getcomposer.org/) to get Drupal + Dyniva.
+[Composer](https://getcomposer.org/) 模版，初始化话dyniva发行版.
 
-Also look at [dyniva](https://github.com/terryzwt/dyniva)
-for a version with demo content.
+更多细节查看[dyniva](https://github.com/davyin-co/dyniva)
 
-## Usage
+## 使用
 
-First you need to [install composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx).
+先安装 [composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx).
 
-> Note: The instructions below refer to the [global composer installation](https://getcomposer.org/doc/00-intro.md#globally).
-You might need to replace `composer` with `php composer.phar` (or similar)
-for your setup.
 
-After that you can create the project:
-
+安装成功后创建项目:
 ```
 composer create-project davyin/dyniva-project dyniva-project --stability dev  --no-interaction
 ```
 
-Done! Use `composer require ...` to download additional modules and themes:
+如果需要引入其他drupal 模块/主题，使用 `composer require ...` 下载安装:
 
 ```
-cd some-dir
+cd dyniva-project
 composer require "drupal/devel:1.x-dev"
 ```
 
@@ -30,15 +25,22 @@ The `composer create-project` command passes ownership of all files to the
 project that is created. You should create a new git repository, and commit
 all files not excluded by the .gitignore file.
 
-## What does the template do?
+## 该项目做了什么？
 
-* Drupal is installed in the `web` directory.
-* Modules (packages of type `drupal-module`) are placed in `web/modules/contrib/`
-* Theme (packages of type `drupal-theme`) are placed in `web/themes/contrib/`
-* Profiles (packages of type `drupal-profile`) are placed in `web/profiles/contrib/`
-* Creates default writable versions of `settings.php` and `services.yml`.
-* Creates the `web/sites/default/files` directory.
-* Latest version of DrupalConsole is installed locally for use at `bin/drupal`.
+* Drupal 安装在 `docroot` 目录.
+* drupal官方模块 (packages of type `drupal-module`) are placed in `docroot/modules/contrib/`
+* dyniva自定义模块 (packages of type `drupal-custom-module`) are placed in `docroot/modules/custom/`
+* drupal官方主题(packages of type `drupal-theme`) are placed in `docroot/themes/contrib/`
+* dyniva自定义主题(packages of type `drupal-custom-theme`) are placed in `docroot/themes/custom/`
+* Profiles (packages of type `drupal-profile`) are placed in `docroot/profiles/contrib/`
+* dyniva自定义Profiles (packages of type `drupal-custom-profile`) are placed in `docroot/profiles/custom/`
+* - Creates default writable versions of `settings.php` and `services.yml` -
+* 创建 `docroot/sites/default/files` directory.
+* - Latest version of DrupalConsole is installed locally for use at `bin/drupal`. -
+* 删除项目非根目录下的.git(因为有些模块通过branch引入的，如果不删除会生成.git文件，导致git提交的时候为git submodule，这样在部署的时候会带来很多麻烦）
+
+## 补丁管理
+补丁使用[cweagans/composer-patches](https://github.com/cweagans/composer-patches)来管理。使用本项目的补丁通过composer.json引入，强烈不建议通过单独的补丁文件管理
 
 ## Updating Drupal Core
 
@@ -63,12 +65,6 @@ Follow the steps below to update your core files.
    of a [three-way merge tool such as kdiff3](http://www.gitshah.com/2010/12/how-to-setup-kdiff-as-diff-tool-for-git.html). This setup is not necessary if your changes are simple;
    keeping all of your modifications at the beginning or end of the file is a
    good strategy to keep merges easy.
-
-## Generate composer.json from existing project
-
-With using [the "Composer Generate" drush extension](https://www.drupal.org/project/composer_generate)
-you can now generate a basic `composer.json` file from an existing project. Note
-that the generated `composer.json` might differ from this project's file.
 
 ## FAQ
 
