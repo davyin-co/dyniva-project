@@ -22,7 +22,6 @@
                 "web-root": "docroot/"
             }
         },
-        "enable-patching": true,
         "installer-paths": {
             "docroot/core": [
                 "type:drupal-core"
@@ -58,6 +57,7 @@
             "bower-asset",
             "npm-asset"
         ],
+        "enable-patching": true,
         "patchLevel": {
             "drupal/core": "-p2"
         }
