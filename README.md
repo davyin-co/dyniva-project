@@ -34,9 +34,9 @@ all files not excluded by the .gitignore file.
 * dyniva自定义主题(packages of type `drupal-custom-theme`) are placed in `docroot/themes/custom/`
 * Profiles (packages of type `drupal-profile`) are placed in `docroot/profiles/contrib/`
 * dyniva自定义Profiles (packages of type `drupal-custom-profile`) are placed in `docroot/profiles/custom/`
-* - Creates default writable versions of `settings.php` and `services.yml` -
+* -- Creates default writable versions of `settings.php` and `services.yml` --
 * 创建 `docroot/sites/default/files` directory.
-* - Latest version of DrupalConsole is installed locally for use at `bin/drupal`. -
+* -- Latest version of DrupalConsole is installed locally for use at `bin/drupal`. --
 * 删除项目非根目录下的.git(因为有些模块通过branch引入的，如果不删除会生成.git文件，导致git提交的时候为git submodule，这样在部署的时候会带来很多麻烦）
 
 ## 补丁管理
