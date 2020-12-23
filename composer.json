@@ -6,7 +6,8 @@
     "require": {
         "davyin/dyniva": "1.1.x-dev",
         "cweagans/composer-patches": "^1.7",
-        "oomphinc/composer-installers-extender": "^1.1 | ^2.0"
+        "oomphinc/composer-installers-extender": "^1.1 | ^2.0",
+        "drupal/core-composer-scaffold": "^9.1"
     },
     "require-dev": {
         "drush/drush": ">=9.0",
@@ -16,7 +17,7 @@
         "process-timeout": 0
     },
     "extra": {
-        "composer-exit-on-patch-failure": true,
+        "composer-exit-on-patch-failure": false,
         "drupal-scaffold": {
             "locations": {
                 "web-root": "docroot/"
