@@ -75,10 +75,17 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
-        "post-create-project-cmd": "rm -r -f .travis.yml .travis-ci",
-        "quick-start": [
-            "composer install",
-            "php docroot/core/scripts/drupal quick-start dyniva --no-interaction"
-        ]
+         "remove-git-submodules" : "find . -mindepth 2 -type d -name .git | xargs rm -rf",
+         "post-install-cmd": [
+             "@remove-git-submodules"
+         ],
+         "post-update-cmd": [
+             "@remove-git-submodules"
+         ],
+         "post-create-project-cmd": "rm -r -f .travis.yml .travis-ci",
+         "quick-start": [
+             "composer install",
+             "php docroot/core/scripts/drupal quick-start dyniva --no-interaction"
+         ]
     }
 }
