@@ -63,10 +63,7 @@
             "bower-asset",
             "npm-asset"
         ],
-        "enable-patching": true,
-        "patchLevel": {
-            "drupal/core": "-p2"
-        }
+        "enable-patching": true
     },
     "repositories": {
         "drupal": {
