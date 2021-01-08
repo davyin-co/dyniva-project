@@ -11,8 +11,7 @@
     "require": {
         "davyin/dyniva": "1.1.x-dev",
         "cweagans/composer-patches": "^1.7",
-        "oomphinc/composer-installers-extender": "^1.1 | ^2.0",
-        "drupal/core-composer-scaffold": "^9.1"
+        "oomphinc/composer-installers-extender": "^1.1 | ^2.0"
     },
     "require-dev": {
         "drush/drush": ">=9.0",
