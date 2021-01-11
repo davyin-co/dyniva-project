@@ -6,7 +6,8 @@
     "config": {
         "platform": {
             "php": "7.2.30"
-        }
+        },
+        "process-timeout": 0
     },
     "require": {
         "davyin/dyniva": "1.1.x-dev",
@@ -16,9 +17,6 @@
     "require-dev": {
         "drush/drush": ">=9.0",
         "zaporylie/composer-drupal-optimizations": "^1.1"
-    },
-    "config": { 
-        "process-timeout": 0
     },
     "extra": {
         "composer-exit-on-patch-failure": false,
