@@ -61,16 +61,16 @@
         ],
         "enable-patching": true
     },
-    "repositories": {
-        "drupal": {
+    "repositories": [
+        {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
         },
-        "assets": {
+        {
             "type": "composer",
             "url": "https://asset-packagist.org"
         }
-    },
+    ],
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
