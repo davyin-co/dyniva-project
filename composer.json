@@ -69,6 +69,43 @@
         {
             "type": "composer",
             "url": "https://asset-packagist.org"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "furf/jquery-ui-touch-punch",
+                "type": "drupal-library",
+                "version": "master",
+                "source": {
+                    "url": "https://github.com/furf/jquery-ui-touch-punch",
+                    "type": "git",
+                    "reference": "origin/master"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "constancecchen/objectfitpolyfill",
+                "type": "drupal-library",
+                "version": "2.3.5",
+                "dist": {
+                    "url": "https://github.com/constancecchen/object-fit-polyfill/archive/v2.3.5.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "kenwheeler/slick",
+                "type": "drupal-library",
+                "version": "1.8.0",
+                "dist": {
+                    "url": "https://github.com/kenwheeler/slick/archive/1.8.0.zip",
+                    "type": "zip"
+                }
+            }
         }
     ],
     "minimum-stability": "dev",
