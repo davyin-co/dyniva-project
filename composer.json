@@ -3,27 +3,31 @@
     "type": "project",
     "description": "Project template for Drupal 8 sites built with the Dyniva distribution.",
     "license": "GPL-2.0-or-later",
-    "config": {
-        "platform": {
-            "php": "7.2.30"
-        },
-        "process-timeout": 0
-    },
     "require": {
-        "davyin/dyniva": "1.1.x-dev",
         "cweagans/composer-patches": "^1.7",
-        "oomphinc/composer-installers-extender": "^1.1 | ^2.0"
+        "davyin/dyniva": "1.1.x-dev",
+        "oomphinc/composer-installers-extender": "^1.1 || ^2.0"
     },
     "require-dev": {
+        "ergebnis/composer-normalize": "^2.13",
         "zaporylie/composer-drupal-optimizations": "^1.1"
+    },
+    "config": {
+        "process-timeout": 0,
+        "sort-packages": true
     },
     "extra": {
         "composer-exit-on-patch-failure": false,
+        "composer-normalize": {
+            "indent-size": 4,
+            "indent-style": "space"
+        },
         "drupal-scaffold": {
             "locations": {
                 "web-root": "docroot/"
             }
         },
+        "enable-patching": true,
         "installer-paths": {
             "docroot/core": [
                 "type:drupal-core"
@@ -58,8 +62,7 @@
         "installer-types": [
             "bower-asset",
             "npm-asset"
-        ],
-        "enable-patching": true
+        ]
     },
     "repositories": [
         {
@@ -67,7 +70,7 @@
             "package": {
                 "name": "drupal/theme_switcher",
                 "version": "1.x-dev",
-                "type":"drupal-module",
+                "type": "drupal-module",
                 "source": {
                     "url": "https://git.drupalcode.org/project/theme_switcher.git",
                     "type": "git",
@@ -124,20 +127,23 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
-         "remove-git-submodules" : "find . -mindepth 2 -type d -name .git | xargs rm -rf",
-         "post-install-cmd": [
-             "@remove-git-submodules"
-         ],
-         "post-update-cmd": [
-             "@remove-git-submodules"
-         ],
-         "post-create-project-cmd": [
-             "rm -r -f .travis.yml .travis-ci",
-             "@remove-git-submodules"
-         ],
-         "quick-start": [
-             "composer install",
-             "php docroot/core/scripts/drupal quick-start dyniva --no-interaction"
-         ]
+        "post-install-cmd": [
+            "@remove-git-submodules",
+            "@format"
+        ],
+        "post-update-cmd": [
+            "@remove-git-submodules",
+            "@format"
+        ],
+        "post-create-project-cmd": [
+            "rm -r -f .travis.yml .travis-ci",
+            "@remove-git-submodules"
+        ],
+        "format": "composer normalize --no-update-lock --no-check-lock",
+        "quick-start": [
+            "composer install",
+            "php docroot/core/scripts/drupal quick-start dyniva --no-interaction"
+        ],
+        "remove-git-submodules": "find . -mindepth 2 -type d -name .git | xargs rm -rf"
     }
 }
