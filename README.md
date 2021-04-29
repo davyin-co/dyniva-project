@@ -36,70 +36,20 @@ all files not excluded by the .gitignore file.
 * dyniva自定义Profiles (packages of type `drupal-custom-profile`) are placed in `docroot/profiles/custom/`
 * -- Creates default writable versions of `settings.php` and `services.yml` --
 * 创建 `docroot/sites/default/files` directory.
-* -- Latest version of DrupalConsole is installed locally for use at `bin/drupal`. --
+* 最新版本的drupal console安装在 `bin/drupal`.
 * 删除项目非根目录下的.git(因为有些模块通过branch引入的，如果不删除会生成.git文件，导致git提交的时候为git submodule，这样在部署的时候会带来很多麻烦）
+* 安装ergebnis/composer-normalize插件，在执行composer update/install之后自动会composer.json进行格式化（使用4个空格的缩进）
 
-## 补丁管理
-补丁使用[cweagans/composer-patches](https://github.com/cweagans/composer-patches)来管理。使用本项目的补丁通过composer.json引入，强烈不建议通过单独的补丁文件管理
 
-## Updating Drupal Core
 
-This project will attempt to keep all of your Drupal Core files up-to-date; the
-project [drupal/core-composer-scaffold](https://github.com/drupal/core-composer-scaffold)
-is used to ensure that your scaffold files are updated every time drupal/core is
-updated. If you customize any of the "scaffolding" files (commonly .htaccess),
-you may need to merge conflicts if any of your modified files are updated in a
-new release of Drupal core.
 
-Follow the steps below to update your core files.
 
-1. Run `composer update drupal/core drupal/core-dev --with-dependencies` to update Drupal Core and its dependencies.
-2. Run `git diff` to determine if any of the scaffolding files have changed.
-   Review the files for any changes and restore any customizations to
-  `.htaccess` or `robots.txt`.
-1. Commit everything all together in a single commit, so `web` will remain in
-   sync with the `core` when checking out branches or running `git bisect`.
-1. In the event that there are non-trivial conflicts in step 2, you may wish
-   to perform these steps on a branch, and use `git merge` to combine the
-   updated core files with your customized files. This facilitates the use
-   of a [three-way merge tool such as kdiff3](http://www.gitshah.com/2010/12/how-to-setup-kdiff-as-diff-tool-for-git.html). This setup is not necessary if your changes are simple;
-   keeping all of your modifications at the beginning or end of the file is a
-   good strategy to keep merges easy.
 
 ## FAQ
 
-### Should I commit the contrib modules I download?
-
-Composer recommends **no**. They provide [argumentation against but also
-workrounds if a project decides to do it anyway](https://getcomposer.org/doc/faqs/should-i-commit-the-dependencies-in-my-vendor-directory.md).
-
-### Should I commit the scaffolding files?
-
-The [Drupal Composer Scaffold](https://github.com/drupal/core-composer-scaffold) plugin can download the scaffold files (like
-index.php, update.php, …) to the web/ directory of your project. If you have not customized those files you could choose
-to not check them into your version control system (e.g. git). If that is the case for your project it might be
-convenient to automatically run the drupal-scaffold plugin after every install or update of your project. You can
-achieve that by registering `@composer drupal:scaffold` as post-install and post-update command in your composer.json:
-
-```json
-"scripts": {
-    "post-install-cmd": [
-        "@composer drupal:scaffold",
-        "..."
-    ],
-    "post-update-cmd": [
-        "@composer drupal:scaffold",
-        "..."
-    ]
-},
-```
-### How can I apply patches to downloaded modules?
-
-If you need to apply patches (depending on the project being modified, a pull
-request is often a better solution), you can do so with the
-[composer-patches](https://github.com/cweagans/composer-patches) plugin.
-
-To add a patch to drupal module foobar insert the patches section in the extra
+### 补丁管理
+补丁使用[cweagans/composer-patches](https://github.com/cweagans/composer-patches)来管理。使用本项目的补丁通过composer.json引入，强烈不建议通过单独的补丁文件管理。
+例如，给drupal core打补丁，可以参考如下格式：
 section of composer.json:
 ```json
 "extra": {
@@ -110,6 +60,10 @@ section of composer.json:
     }
 }
 ```
+
+### Drupal 内核版本说明
+
+该项目不限定Drupal内核版本，版本受dyniva约束。具体可以查看[Dyniva](https://github.com/davyin-co/dyniva)说明。
 
 ### How can I add js/css libraries using composer.json?
 
@@ -133,16 +87,14 @@ web/libraries/colorbox
 
 For more details, see https://asset-packagist.org/site/about
 
-### How do I specify a PHP version ?
-
-This project supports PHP 7.0 as minimum version (see [Drupal 8 PHP requirements](https://www.drupal.org/docs/8/system-requirements/drupal-8-php-requirements)), however it's possible that a `composer update` will upgrade some package that will then require PHP 7+.
+### 如何指定PHP版本？
 
 To prevent this you can add this code to specify the PHP version you want to use in the `config` section of `composer.json`:
 ```json
 "config": {
     "sort-packages": true,
     "platform": {
-        "php": "7.0.33"
+        "php": "7.2.22"
     }
 },
 ```

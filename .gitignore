@@ -12,3 +12,10 @@ docroot/sites/simpletest
 *.sql
 *.tgz
 *.tar.gz
+
+# dotenv file
+.env
+
+# backup files
+*.original
+*.backup

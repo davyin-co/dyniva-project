@@ -6,6 +6,7 @@
     "require": {
         "cweagans/composer-patches": "^1.7",
         "davyin/dyniva": "1.1.x-dev",
+        "drupal/console": "^1.9",
         "oomphinc/composer-installers-extender": "^1.1 || ^2.0"
     },
     "require-dev": {
@@ -13,6 +14,7 @@
         "zaporylie/composer-drupal-optimizations": "^1.1"
     },
     "config": {
+        "bin-dir": "bin/",
         "process-timeout": 0,
         "sort-packages": true
     },
@@ -54,9 +56,6 @@
             ],
             "docroot/themes/custom/{$name}": [
                 "type:drupal-custom-theme"
-            ],
-            "drush/contrib/{$name}": [
-                "type:drupal-drush"
             ]
         },
         "installer-types": [
