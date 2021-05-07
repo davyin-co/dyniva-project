@@ -1,6 +1,6 @@
 # 介绍
 
-[Composer](https://getcomposer.org/) 模版，初始化话dyniva发行版.
+[Composer](https://getcomposer.org/) 模版，初始化dyniva发行版.
 
 更多细节查看[dyniva](https://github.com/davyin-co/dyniva)
 
