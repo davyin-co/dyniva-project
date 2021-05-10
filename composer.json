@@ -37,7 +37,8 @@
             "docroot/libraries/{$name}": [
                 "type:drupal-library",
                 "type:bower-asset",
-                "type:npm-asset"
+                "type:npm-asset",
+                "harvesthq/chosen"
             ],
             "docroot/modules/contrib/{$name}": [
                 "type:drupal-module"
