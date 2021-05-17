@@ -8,10 +8,11 @@
 
 先安装 [composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx).
 
-
-安装成功后创建项目:
+安装成功后创建项目，初始化安装:
 ```
 composer create-project davyin/dyniva-project dyniva-project --stability dev  --no-interaction
+cd dyniva-project
+drush si dyniva  --db-url=mysql://mysql-user:mysql-password@mysql-host:3306/dyniva_project --account-pass=admin -y
 ```
 
 如果需要引入其他drupal 模块/主题，使用 `composer require ...` 下载安装:
@@ -39,10 +40,6 @@ all files not excluded by the .gitignore file.
 * 最新版本的drupal console安装在 `bin/drupal`.
 * 删除项目非根目录下的.git(因为有些模块通过branch引入的，如果不删除会生成.git文件，导致git提交的时候为git submodule，这样在部署的时候会带来很多麻烦）
 * 安装ergebnis/composer-normalize插件，在执行composer update/install之后自动会composer.json进行格式化（使用4个空格的缩进）
-
-
-
-
 
 
 ## FAQ
