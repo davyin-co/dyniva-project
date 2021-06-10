@@ -114,6 +114,30 @@
         {
             "type": "package",
             "package": {
+                "name": "ckeditor/colorbutton",
+                "type": "drupal-library",
+                "version": "4.16.1",
+                "dist": {
+                    "url": "https://download.ckeditor.com/colorbutton/releases/colorbutton_4.16.1.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "ckeditor/panelbutton",
+                "type": "drupal-library",
+                "version": "4.16.1",
+                "dist": {
+                    "url": "https://download.ckeditor.com/panelbutton/releases/panelbutton_4.16.1.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
                 "name": "kenwheeler/slick",
                 "type": "drupal-library",
                 "version": "1.8.0",
