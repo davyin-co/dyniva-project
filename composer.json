@@ -5,6 +5,7 @@
     "license": "GPL-2.0-or-later",
     "require": {
         "cweagans/composer-patches": "^1.7",
+        "davyin/drupal_settings": "dev-main",
         "davyin/dyniva": "2.1.x-dev",
         "drupal/console": "^1.9",
         "oomphinc/composer-installers-extender": "^1.1 || ^2.0"
@@ -25,6 +26,38 @@
             "indent-style": "space"
         },
         "drupal-scaffold": {
+            "file-mapping": {
+                "[web-root]/sites/default/default.settings.php": {
+                    "mode": "replace",
+                    "overwrite": true,
+                    "path": "vendor/davyin/drupal_settings/assets/default.settings.php"
+                },
+                "[web-root]/sites/default/dev.services.yml": {
+                    "mode": "replace",
+                    "overwrite": false,
+                    "path": "vendor/davyin/drupal_settings/assets/dev.services.yml"
+                },
+                "[web-root]/sites/default/local.settings.php": {
+                    "mode": "replace",
+                    "overwrite": false,
+                    "path": "vendor/davyin/drupal_settings/assets/settings.local.php"
+                },
+                "[web-root]/sites/default/prod.services.yml": {
+                    "mode": "replace",
+                    "overwrite": false,
+                    "path": "vendor/davyin/drupal_settings/assets/prod.services.yml"
+                },
+                "[web-root]/sites/default/settings.php": {
+                    "mode": "replace",
+                    "overwrite": false,
+                    "path": "vendor/davyin/drupal_settings/assets/default.settings.php"
+                },
+                "[web-root]/sites/default/settings.platform.php": {
+                    "mode": "replace",
+                    "overwrite": false,
+                    "path": "vendor/davyin/drupal_settings/assets/settings.platform.php"
+                }
+            },
             "locations": {
                 "web-root": "docroot/"
             }
