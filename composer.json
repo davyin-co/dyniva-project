@@ -6,7 +6,7 @@
     "require": {
         "cweagans/composer-patches": "^1.7",
         "davyin/drupal_settings": "dev-main",
-        "davyin/dyniva": "2.1.x-dev",
+        "davyin/dyniva": "2.2.x-dev",
         "drupal/console": "^1.9",
         "oomphinc/composer-installers-extender": "^1.1 || ^2.0"
     },
