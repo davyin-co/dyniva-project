@@ -12,6 +12,7 @@
 ```
 composer create-project davyin/dyniva-project dyniva-project --stability dev  --no-interaction
 cd dyniva-project
+composer install
 drush si dyniva  --db-url=mysql://mysql-user:mysql-password@mysql-host:3306/dyniva_project --account-pass=admin -y
 ```
 
