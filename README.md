@@ -13,7 +13,7 @@
 composer create-project davyin/dyniva-project dyniva-project --stability dev  --no-interaction
 cd dyniva-project
 composer install
-drush si dyniva  --db-url=mysql://mysql-user:mysql-password@mysql-host:3306/dyniva_project --account-pass=admin -y
+drush si dyniva --site-name="Dyniva Project" --db-url=mysql://mysql-user:mysql-password@mysql-host:3306/dyniva_project --account-pass=admin -y
 ```
 
 如果需要引入其他drupal 模块/主题，使用 `composer require ...` 下载安装:
